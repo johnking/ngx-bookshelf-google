@@ -1,6 +1,11 @@
 # NgxBookshelfGoogle
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
+## Purposes
+- A playground to practise angular 5+ programming skills
+- Focus on 3 areas:
+  - Unit Testing
+  - E2E Testing
+  - Google Book Service integration
 
 ## Development server
 
