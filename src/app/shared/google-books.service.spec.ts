@@ -1,5 +1,7 @@
+/* tslint:disable:max-line-length */
+
 // References: https://medium.com/spektrakel-blog/angular-testing-snippets-httpclient-d1dc2f035eb8
-//
+
 import {TestBed, async, inject, tick, fakeAsync} from '@angular/core/testing';
 import {GoogleBooksService} from './google-books.service';
 import {HttpModule, BaseRequestOptions, Http, ResponseOptions, Response} from '@angular/http';
