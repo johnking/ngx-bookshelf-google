@@ -9,9 +9,16 @@ exports.config = {
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    'chromeOptions': {
+      args: ['window-size=400, 800']
+    }
   },
-  directConnect: true,
+  // directConnect: true,
+  // use standalone Selenium server with following two lines.
+  directConnect: false,
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  seleniumSessionId: '7254885a-9a46-4844-b680-885447bb0cfe',
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
