@@ -18,7 +18,7 @@ exports.config = {
   // use standalone Selenium server with following two lines.
   directConnect: false,
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  seleniumSessionId: '053004fd-084a-4b28-8feb-5b29246d6ac3',
+  seleniumSessionId: 'b717838c-796b-4522-be61-8c5fcaf246be',
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
