@@ -9,7 +9,7 @@ import {Book} from '../shared/book';
 export class BookListComponent implements OnInit {
 
   @Input()
-  private books: Book[];
+  public books: Book[];
 
   ngOnInit() {
   }

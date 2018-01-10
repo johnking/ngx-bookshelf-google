@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BookListComponent } from './book-list.component';
+import { Book } from '../shared/book';
 
 @Component({
   template: ''
@@ -13,6 +14,18 @@ class FakeBookComponent {}
 describe('BookListComponent', () => {
   let component: BookListComponent;
   let fixture: ComponentFixture<BookListComponent>;
+  const books = [];
+
+  beforeAll( () => {
+    let book: Book;
+    book = new Book('001', 'title-001', 'subTitle-001',
+      ['John King', 'Billy King'], 'Kingspress', '2018-January-09', 'A demo title-001', ['fiction'], '', '');
+    books.push(book);
+
+    book = new Book('002', 'title-002', 'subTitle-002',
+      ['John King', 'Billy King'], 'Kingspress', '2018-January-09', 'A demo title-002', ['fiction'], '', '');
+    books.push(book);
+  });
 
   // async setup for external template and style.
   beforeEach(async(() => {
@@ -33,11 +46,16 @@ describe('BookListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BookListComponent);
     component = fixture.componentInstance;
+    component.books = books;
     fixture.detectChanges();
   });
 
   it('should create an instance', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`should have 2 books`, () => {
+    expect(component.books.length).toBe(2);
   });
 
 });
