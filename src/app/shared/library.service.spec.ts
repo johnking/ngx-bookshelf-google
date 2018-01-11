@@ -58,4 +58,13 @@ describe('LibraryService', () => {
     libraryService.load();
     expect(libraryService.hasBook(book)).toBe(true);
   });
+
+  it(`can clear the library`, () => {
+    libraryService.clearLibrary();
+    expect(libraryService.books.length).toBeFalsy();
+  });
+
+  afterAll( () => {
+    libraryService.clearLibrary();
+  });
 });

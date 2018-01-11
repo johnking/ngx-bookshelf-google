@@ -58,5 +58,8 @@ export class LibraryService {
     return -1;
   }
 
-
+  clearLibrary(): void {
+    localStorage.clear();
+    this.books = [];
+  }
 }
