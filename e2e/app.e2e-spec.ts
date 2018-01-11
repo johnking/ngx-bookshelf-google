@@ -31,8 +31,11 @@ describe('ngx-bookshelf-google App', () => {
 
   it(`should be able to navigate to 'search' page`, () => {
     page.navigateToSearch();
-    browser.sleep(2000);
+    browser.sleep(1000);
+  });
+
+  it(`should be able to navigate to 'library' page`, () => {
     page.navigateToLibrary();
-    browser.sleep(2000);
+    browser.sleep(1000);
   });
 });

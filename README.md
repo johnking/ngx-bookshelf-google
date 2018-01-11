@@ -29,6 +29,7 @@
 - [Cory Rylan: e2e testing](https://coryrylan.com/blog/introduction-to-e2e-testing-with-the-angular-cli-and-protractor)
 - [tutsplu: get started with protractor](https://code.tutsplus.com/tutorials/getting-started-with-end-to-end-testing-in-angular-using-protractor--cms-29318)
 - [Protractor Screenshot](https://github.com/azachar/protractor-screenshoter-plugin)
+- [Using Page Objects to Organize Tests](http://www.protractortest.org/#/page-objects)
 
 ### TIPs and Workarounds
 - [protractor watch mode ](https://github.com/angular/angular-cli/issues/2861)
