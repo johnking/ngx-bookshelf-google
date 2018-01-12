@@ -3,19 +3,25 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
     "build": "ng build --prod",
-    "test": "ng test --single-run",
-    "lint": "ng lint",
+    "ci": "npm run lint && npm run test && npm run docs",
+    "clean:all": "npm run clean:tmp && rimraf node_modules",
+    "clean:tmp": "rimraf coverage dist tmp docs",
+    "cm": "git-cz",
+    "docs": "compodoc -p tsconfig.json -d docs",
     "e2e": "ng e2e",
     "e2e:watch": "watch 'ng e2e -s true' src e2e --wait=1",
-    "ci": "npm run lint && npm run test",
-    "cm": "git-cz",
-    "precommit": "npm run lint && npm run test",
-    "semantic-release": "semantic-release"
+    "lint": "ng lint",
+    "ng": "ng",
+    "precommit": "npm run ci",
+    "semantic-release": "semantic-release",
+    "start": "ng serve",
+    "test": "ng test --single-run"
   },
-  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnking/ngx-bookshelf-google.git"
+  },
   "dependencies": {
     "@angular/animations": "^5.0.0",
     "@angular/common": "^5.0.0",
@@ -34,6 +40,7 @@
     "@angular/cli": "1.6.3",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",
+    "@compodoc/compodoc": "1.0.5",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",

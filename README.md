@@ -25,13 +25,18 @@
 - [Angular Testing Guide](https://angular.io/guide/testing)
 - [Jasmine: Understanding the Difference between beforeAll and beforeEach](http://breazeal.com/blog/jasmineBefore.html)
 
-
 ### E2E Testing
 - [Protractor](http://www.protractortest.org/#/)
 - [Cory Rylan: e2e testing](https://coryrylan.com/blog/introduction-to-e2e-testing-with-the-angular-cli-and-protractor)
 - [tutsplu: get started with protractor](https://code.tutsplus.com/tutorials/getting-started-with-end-to-end-testing-in-angular-using-protractor--cms-29318)
 - [Protractor Screenshot](https://github.com/azachar/protractor-screenshoter-plugin)
 - [Using Page Objects to Organize Tests](http://www.protractortest.org/#/page-objects)
+
+### Build
+- [Learn YAML](https://learnxinyminutes.com/docs/yaml/)
+- [YAML converter](https://codebeautify.org/yaml-to-json-xml-csv)
+- [How to set up TravisCI for projects that push back to github](https://gist.github.com/willprice/e07efd73fb7f13f917ea)
+- [GitHub Pages Deployment](https://docs.travis-ci.com/user/deployment/pages/)
 
 ### TIPs and Workarounds
 - [protractor watch mode ](https://github.com/angular/angular-cli/issues/2861)
