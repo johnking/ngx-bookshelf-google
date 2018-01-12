@@ -1,4 +1,3 @@
-# why sudo? see the issue at: https://github.com/travis-ci/travis-ci/issues/8836#issuecomment-356362524
 sudo: required
 language: node_js
 cache:
@@ -7,11 +6,25 @@ notifications:
   email: false
 node_js:
   - node
-before_script: # Using xvfb to Run Tests That Require a GUI such as chrome
+before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - sleep 3 # give xvfb some time to start
+  - sleep 3
+
+# deploy:
+#   provider: pages
+#   skip-cleanup: true
+#   github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+#   keep-history: true
+#   on:
+#     branch: master
+
 script:
   - npm run ci
 after_success:
   - npm run semantic-release
+  - bash ./docs-deploy.sh
+env:
+  global:
+    - GH_REF: github.com/johnking/ngx-bookshelf-google.git
+    - secure: VAw/4KCP94eiJi/JV6+hOADWKOfWy1CD/P9Fb1mqViPu+uTFhZNoop1X9N2DuSesBzBW9I93UWbPacQEM3V85VsS8G5k5B7nDoM2KOZc8NXm8tUDlZR5EdsSXMHVNuUOMThUJ2HXdHsKReoEOw3NcQdw4zYXIE/77w7fNfiXNI1O3HMRGo8ntYnti+SdI8Djx7hofHZCcktY2Boz77kVqsjC0H2R2LlZil6z1ffNirsP5EWrk/0U7yzuOQgd3ZajAelGr0IySigjWaTkFRwKy5mckAhVYSSCm7kNmdcmZ9o/CZ2EiQ43NmA+aoOGgNYc5WIpkWWp6dvfoKeZaBmpkjP6Img0j+VgYFTnZJVnSttxtR/VmUldCGHgO29YLFqMrXWxlfrMaR8zvkzMBfc+JEyy7gce5loDn4+T1/fBNSGWnkllgD/ZzadjhXrKCyIVz+nUYdY8KwHIvYW2q5n8KMbIiiAaABblqLMW87vAZXq8rii2zFU1vqu2ZRrvxlPHYAz4ekuQHiCVR0I/LWqGs7K7G1Xei6zj5e/3KfgGhg76YIT4Y+Xjd40kRhD3diKB0DB+8YWADd9IPwZtmUiHChAIjS7i6XUEHrKLxgZ7jtmjQ7M2z+LZgb+hZBIqcCsQnqk2125WkUOoN2KTflUWOMn28vRc/UFcduOnjo2odSs=
