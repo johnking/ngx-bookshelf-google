@@ -11,14 +11,6 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - sleep 3
 
-# deploy:
-#   provider: pages
-#   skip-cleanup: true
-#   github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
-#   keep-history: true
-#   on:
-#     branch: master
-
 script:
   - npm run ci
 after_success:
