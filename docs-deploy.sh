@@ -7,7 +7,7 @@ cd docs && \
 rm -R .git
 git init && \
 
-git config user.name "johnking" && \
+git config user.name "Travis CI" && \
 git config user.email "john.king.ca@gmail.com" && \
 
 git add . && \
