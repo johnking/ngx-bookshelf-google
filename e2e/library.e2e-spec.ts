@@ -1,7 +1,7 @@
 import { browser, protractor, ElementFinder} from 'protractor';
 import { LibraryPage } from './library.po';
 
-fdescribe('LibraryPage', () => {
+describe('LibraryPage', () => {
   const page = new LibraryPage();
 
   beforeEach(() => {

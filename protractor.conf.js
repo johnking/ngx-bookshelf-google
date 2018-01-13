@@ -14,10 +14,10 @@ exports.config = {
       args: ['window-size=400, 800']
     }
   },
-  // directConnect: true,
-  // use standalone Selenium server with following two lines.
-  directConnect: false,
-  seleniumAddress: 'http://localhost:4444/wd/hub',
+  directConnect: true,
+  // // use standalone Selenium server with following two lines.
+  // directConnect: false,
+  // seleniumAddress: 'http://localhost:4444/wd/hub',
   // seleniumSessionId: 'b717838c-796b-4522-be61-8c5fcaf246be',
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
