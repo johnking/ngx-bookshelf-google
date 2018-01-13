@@ -39,9 +39,11 @@
 - [GitHub Pages Deployment](https://docs.travis-ci.com/user/deployment/pages/)
 - [Auto-deploying built products to gh-pages with Travis](https://gist.github.com/domenic/ec8b0fc8ab45f39403dd)
 - [ How to generate a ssh key and add it to the ssh-agent ](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+- [ dist:trusty? ](https://blog.travis-ci.com/2017-08-31-trusty-as-default-status)
 ### TIPs and Workarounds
 - [protractor watch mode ](https://github.com/angular/angular-cli/issues/2861)
 - [protractor existing browser](https://stackoverflow.com/questions/38451848/how-to-connect-and-re-use-an-already-opened-browser-window-in-protractor)
+- [angular-Cli Stories](https://github.com/angular/angular-cli/tree/master/docs/documentation/stories)
 
 ## Usage
 ### Development server

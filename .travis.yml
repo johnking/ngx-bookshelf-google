@@ -1,21 +1,40 @@
 sudo: required
+
 language: node_js
+
 cache:
   yarn: true
+
 notifications:
   email: false
+
 node_js:
   - node
-before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - sleep 3
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+# before_script:
+#   - export DISPLAY=:99.0
+#   - sh -e /etc/init.d/xvfb start
+#   - sleep 3
+#
+# script:
+#   - npm run ci
 
 script:
-  - npm run ci
+  # Use chromium instead of Chrome since Travis doesn't come with Chrome
+  - export CHROME_BIN = chromium-browser
+  - xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
+  - xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js
+
 after_success:
   - npm run semantic-release
-  - bash ./docs-deploy.sh
-env:
-  global:
-    - GH_REF: github.com/johnking/ngx-bookshelf-google.git
+
+# env:
+#   global:
+#     - GH_REF: github.com/johnking/ngx-bookshelf-google.git
