@@ -1,0 +1,40 @@
+%book-dl-common {
+  display:inline-block;
+  *display:inline;
+  zoom:1;
+  letter-spacing:normal;
+  word-spacing:normal;
+  vertical-align:top;
+  margin:0;
+}
+
+.book-card {
+  width: 400px;
+}
+
+// .book-card-header-image {
+//   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+//   background-size: cover;
+// }
+
+dl{
+  letter-spacing:-0.31em;
+  *letter-spacing:normal;
+  word-spacing:-0.43em;
+
+  dt {
+    @extend %book-dl-common;
+
+    font-weight:600;
+    width:48%;
+    padding: 0 2% 0.5em 0;
+  }
+
+  dd {
+    @extend %book-dl-common;
+
+    margin-right:-1px;
+    width:50%;
+    padding: 0 0 0.5em 0;
+  }
+}

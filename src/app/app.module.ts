@@ -1,10 +1,16 @@
+// angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// material
+import { MyCustomMaterialModule } from './my-custom-material/my-custom-material.module';
+
+// local
 import {GoogleBooksService} from './shared/google-books.service';
 import {LibraryService} from './shared/library.service';
 
@@ -15,7 +21,6 @@ import { LibraryComponent } from './library/library.component';
 import { BookComponent } from './book/book.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { PagerComponent } from './pager/pager.component';
-
 
 @NgModule({
   declarations: [
@@ -32,7 +37,8 @@ import { PagerComponent } from './pager/pager.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MyCustomMaterialModule
   ],
   providers: [ GoogleBooksService, LibraryService],
   bootstrap: [AppComponent]

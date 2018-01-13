@@ -1,29 +1,19 @@
-<div class="row m-3">
-  <div class="col-md-6 col-md-offset-3">
-    <h2 class="text-center">{{ book?.title }}</h2>
-
-    <h6 class="text-center">{{ book?.subTitle }}</h6>
-
-    <div class=" m-3">
-      <img class="rounded center-block"
-           src="{{ book?.thumbnail }}">
-    </div>
-
-
+<mat-card class="book-card">
+  <mat-card-header>
+    <img mat-card-avatar src="{{ book?.smallThumbnail }}">
+    <mat-card-title>{{ book?.title }}</mat-card-title>
+    <mat-card-subtitle>by {{ book?.authors }}  </mat-card-subtitle>
+  </mat-card-header>
+  <hr>
+  <div class="book-card-metadata">
     <dl>
-      <dt>Description</dt>
-      <dd>
-        <p [innerHtml]="book?.description"></p>
-      </dd>
-
-      <dt>Authors</dt>
-      <dd>{{ book?.authors }}</dd>
+      <dt *ngIf="book?.subTitle">subTitle</dt>
+      <dd *ngIf="book?.subTitle">{{ book?.subTitle }}</dd>
 
       <dt>Categories</dt>
       <dd>
-        <span *ngFor="let category of book?.categories"
-              class="mr-1 badge badge-pill badge-default">
-          {{ category }}
+        <span *ngFor="let category of book?.categories; let i= index">
+          {{i+1}}. {{category}}
         </span>
       </dd>
 
@@ -33,20 +23,22 @@
       <dt>Publisher</dt>
       <dd>{{ book?.publisher }}</dd>
     </dl>
-
-    <p>
-      <button *ngIf="!hasBook(book)"
-              (click)="addBook(book)"
-              type="button"
-              class="btn btn-primary">Add To Library
-      </button>
-      <button *ngIf="hasBook(book)"
-              (click)="removeBook(book)"
-              type="button"
-              class="btn btn-default">Remove From Library
-      </button>
-    </p>
-
-
   </div>
-</div>
+
+  <img mat-card-image src="{{ book?.thumbnail }}" alt="book cover image">
+
+  <mat-card-content>
+    <p [innerHtml]="book?.description"></p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button *ngIf="!hasBook(book)"
+            (click)="addBook(book)">
+            Add To Library
+    </button>
+    <button mat-button *ngIf="hasBook(book)"
+            (click)="removeBook(book)">
+            Remove From Library
+    </button>
+
+  </mat-card-actions>
+</mat-card>

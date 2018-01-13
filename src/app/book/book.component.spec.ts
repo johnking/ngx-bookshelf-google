@@ -1,15 +1,12 @@
 import { async, fakeAsync, ComponentFixture, TestBed, tick } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/of';
-
 import { RouterTestingModule } from '@angular/router/testing';
+import { MyCustomMaterialModule } from '../my-custom-material/my-custom-material.module';
 
 import { BookComponent } from './book.component';
-import { Book } from '../shared/book';
 import { fakeGoogleBooks } from '../shared/test-helpers';
 import { GoogleBooksService } from '../shared/google-books.service';
 import { LibraryService } from '../shared/library.service';
@@ -17,18 +14,17 @@ import { LibraryService } from '../shared/library.service';
 describe('BookComponent', () => {
   let component: BookComponent;
   let fixture: ComponentFixture<BookComponent>;
-  const books = [];
   let gbService: GoogleBooksService;
   let libraryService: LibraryService;
   let gbSpy: any;
-  // const libSpy: any;
 
   // async setup for external template and style.
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientModule,
-        RouterTestingModule
+        RouterTestingModule,
+        MyCustomMaterialModule
       ],
       declarations: [
         BookComponent,

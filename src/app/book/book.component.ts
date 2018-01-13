@@ -18,7 +18,7 @@ export class BookComponent {
               private googleBooksService: GoogleBooksService,
               private libraryService: LibraryService) {
     this.route.params.subscribe(params => {
-      console.log(params);
+      // console.log(params);
       if (params['bookId']) {
         this.getBook(params['bookId']);
       }
@@ -27,7 +27,7 @@ export class BookComponent {
 
   getBook(bookId: string) {
     this.googleBooksService.retrieveBook(bookId)
-      .do(value => console.log(value))
+      // .do(value => console.log(value))
       .subscribe(value => this.book = value);
   }
 
