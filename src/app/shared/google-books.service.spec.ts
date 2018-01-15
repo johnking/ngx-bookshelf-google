@@ -8,7 +8,7 @@ import {HttpModule, BaseRequestOptions, Http, ResponseOptions, Response} from '@
 import { HttpClientModule, HttpClient, HttpRequest, HttpParams } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import {Book} from './book';
-import { fakeGoogleBooksResponse_01, fakeGoogleBooksResponse_02  } from '../shared/test-helpers/';
+import { fakeGoogleBooksResponse_01, fakeGoogleBooksResponse_02  } from '../../testing/';
 
 describe('GoogleBooksService', () => {
 
@@ -96,4 +96,28 @@ describe('GoogleBooksService', () => {
     injectService.page = 2;
     expect(injectService.searchBooks).toHaveBeenCalled();
   }));
+
+  it('should return total pages after searched', fakeAsync(inject([HttpClient, HttpTestingController],
+    (http: HttpClient, backend: HttpTestingController) => {
+      response = fakeGoogleBooksResponse_01;
+      // Perform a request and make sure we get the response we expect
+      service.searchBooks('Angular');
+
+      backend.match({
+        url: 'https://www.googleapis.com/books/v1/volumes?q=Angular&maxResults=10&startIndex=10'
+      })[0].flush(response);
+
+      tick();
+      expect(service.totalPages).toBeGreaterThan(0);
+      service.totalItems = null;
+      // service.pageSize = null;
+      expect(service.totalPages).toBe(0);
+      spyOn(Math, 'ceil').and.callFake(function () { throw new Error('error'); });
+      expect(service.totalPages).toBe(0);
+      service._page = 1;
+      service.page = 1;
+      expect(service.page).toBe(1);
+      // service.page = 2;
+      // expect(service.page).toBe(2);
+  })));
 });

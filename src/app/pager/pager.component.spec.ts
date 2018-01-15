@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { click } from '../shared/test-helpers/';
+import { click } from '../../testing';
 import { PagerComponent } from './pager.component';
 
 describe('PagerComponent', () => {

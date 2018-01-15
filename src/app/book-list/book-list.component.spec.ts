@@ -14,18 +14,12 @@ class FakeBookComponent {}
 describe('BookListComponent', () => {
   let component: BookListComponent;
   let fixture: ComponentFixture<BookListComponent>;
-  const books = [];
-
-  beforeAll( () => {
-    let book: Book;
-    book = new Book('001', 'title-001', 'subTitle-001',
-      ['John King', 'Billy King'], 'Kingspress', '2018-January-09', 'A demo title-001', ['fiction'], '', '');
-    books.push(book);
-
-    book = new Book('002', 'title-002', 'subTitle-002',
-      ['John King', 'Billy King'], 'Kingspress', '2018-January-09', 'A demo title-002', ['fiction'], '', '');
-    books.push(book);
-  });
+  const books: Book[] = [
+    new Book('001', 'title-001', 'subTitle-001',
+      ['John King', 'Billy King'], 'Kingspress', '2018-January-09', 'A demo title-001', ['fiction'], '', ''),
+    new Book('002', 'title-002', 'subTitle-002',
+      ['John King', 'Billy King'], 'Kingspress', '2018-January-09', 'A demo title-002', ['fiction'], '', '')
+  ];
 
   // async setup for external template and style.
   beforeEach(async(() => {

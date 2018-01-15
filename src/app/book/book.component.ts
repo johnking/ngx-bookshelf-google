@@ -17,10 +17,9 @@ export class BookComponent {
               private route: ActivatedRoute,
               private googleBooksService: GoogleBooksService,
               private libraryService: LibraryService) {
-    this.route.params.subscribe(params => {
-      // console.log(params);
-      if (params['bookId']) {
-        this.getBook(params['bookId']);
+    this.route.paramMap.subscribe(p => {
+      if (p.has('bookId')) {
+        this.getBook(p.get('bookId'));
       }
     });
   }

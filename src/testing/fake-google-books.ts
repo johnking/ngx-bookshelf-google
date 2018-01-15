@@ -1,22 +1,4 @@
 /* tslint:disable:max-line-length */
-
-import { DebugElement } from '@angular/core';
-
-/** Button events to pass to `DebugElement.triggerEventHandler` for RouterLink event handler */
-export const ButtonClickEvents = {
-  left: { button: 0 },
-  right: { button: 2 }
-};
-
-/** Simulate element click. Defaults to mouse left-button click event. */
-export function click(el: DebugElement | HTMLElement, eventObj: any = ButtonClickEvents.left): void {
-  if (el instanceof HTMLElement) {
-    el.click();
-  } else {
-    el.triggerEventHandler('click', eventObj);
-  }
-}
-
 export const fakeGoogleBooksResponse_01 = {
   'kind': 'books#volumes',
   'totalItems': 896,
@@ -250,9 +232,9 @@ export const fakeGoogleBooksResponse_02 = {
 /* tslint:disable:quotemark */
 export const fakeGoogleBooks = [
   {
-    "id": "js2P_8lbR2wC", "title": "Fundamentals of Biomechanics", "authors": ["Duane V. Knudson"], "publisher": "Springer Science & Business Media", "publishDate": "2003-01-01", "description": "Fundamentals of Biomechanics introduces the exciting world of how human movement is created and how it can be improved. Teachers, coaches and physical therapists all use biomechanics to help people improve movement and decrease the risk of injury. The book presents a comprehensive review of the major concepts of biomechanics and summarizes them in nine principles of biomechanics. Fundamentals of Biomechanics concludes by showing how these principles can be used by movement professionals to improve human movement. Specific case studies are presented in physical education, coaching, strength and conditioning, and sports medicine.", "categories": ["Science"], "thumbnail": "http://books.google.com/books/content?id=js2P_8lbR2wC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api", "smallThumbnail": "http://books.google.com/books/content?id=js2P_8lbR2wC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"
+    "id": "js2P_8lbR2wC", "title": "Fundamentals of Biomechanics", "subTitle": "fake subtitle", "authors": ["Duane V. Knudson"], "publisher": "Springer Science & Business Media", "publishDate": "2003-01-01", "description": "Fundamentals of Biomechanics introduces the exciting world of how human movement is created and how it can be improved. Teachers, coaches and physical therapists all use biomechanics to help people improve movement and decrease the risk of injury. The book presents a comprehensive review of the major concepts of biomechanics and summarizes them in nine principles of biomechanics. Fundamentals of Biomechanics concludes by showing how these principles can be used by movement professionals to improve human movement. Specific case studies are presented in physical education, coaching, strength and conditioning, and sports medicine.", "categories": ["Science"], "thumbnail": "http://books.google.com/books/content?id=js2P_8lbR2wC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api", "smallThumbnail": "http://books.google.com/books/content?id=js2P_8lbR2wC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"
   },
   {
-    "id": "PrOKEcZXJ58C", "title": "Biomechanics of Sport and Exercise", "authors": ["Peter Merton McGinnis"], "publisher": "Human Kinetics", "publishDate": "2005", "description": "'Biomechanics of Sport and Exercise, Second Edition,' introduces exercise and sport biomechanics in concise terms rather than focusing on complex math and physics. This book helps students learn to appreciate external forces and their effects, how the body generates forces to maintain position, and how forces create movement in physical activities.", "categories": ["Health & Fitness"], "thumbnail": "http://books.google.com/books/content?id=PrOKEcZXJ58C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api", "smallThumbnail": "http://books.google.com/books/content?id=PrOKEcZXJ58C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"
+    "id": "PrOKEcZXJ58C", "title": "Biomechanics of Sport and Exercise", "subTitle": "fake subtitle", "authors": ["Peter Merton McGinnis"], "publisher": "Human Kinetics", "publishDate": "2005", "description": "'Biomechanics of Sport and Exercise, Second Edition,' introduces exercise and sport biomechanics in concise terms rather than focusing on complex math and physics. This book helps students learn to appreciate external forces and their effects, how the body generates forces to maintain position, and how forces create movement in physical activities.", "categories": ["Health & Fitness"], "thumbnail": "http://books.google.com/books/content?id=PrOKEcZXJ58C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api", "smallThumbnail": "http://books.google.com/books/content?id=PrOKEcZXJ58C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"
   }
 ];

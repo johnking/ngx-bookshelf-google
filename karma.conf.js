@@ -1,9 +1,9 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
-
 module.exports = function (config) {
   config.set({
     basePath: '',
+
     frameworks: ['jasmine', '@angular/cli'],
     plugins: [
       require('karma-jasmine'),
@@ -17,7 +17,13 @@ module.exports = function (config) {
     },
     coverageIstanbulReporter: {
       reports: [ 'html', 'lcovonly' ],
-      fixWebpackSourcePaths: true
+      fixWebpackSourcePaths: true,
+      thresholds: {
+        statements: 90,
+        lines: 80,
+        branches: 90,
+        functions: 100
+      }
     },
     angularCli: {
       environment: 'dev'
@@ -34,6 +40,7 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       }
     },
+
     singleRun: false
   });
 };

@@ -53,7 +53,7 @@ export class GoogleBooksService {
       // .map(res => res.json())
       //
       .do(data => {
-        console.log(data);
+        // console.log(data);
         this.totalItems = data['totalItems'];
       })
       .map(data => {

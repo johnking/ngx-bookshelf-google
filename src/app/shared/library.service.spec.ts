@@ -64,6 +64,17 @@ describe('LibraryService', () => {
     expect(libraryService.books.length).toBeFalsy();
   });
 
+  it(`can index the library`, () => {
+    const book1 = createBookFixture('book_1');
+    libraryService.addBook(book1);
+    const book2 = createBookFixture('book_2');
+    libraryService.addBook(book2);
+    libraryService.save();
+    expect(libraryService.indexOf(book2)).toBe(1);
+    const book3 = createBookFixture('book_3');
+    expect(libraryService.indexOf(book3)).toBe(-1);
+  });
+
   afterAll( () => {
     libraryService.clearLibrary();
   });
