@@ -17,7 +17,7 @@
     "precommit": "npm run ci",
     "semantic-release": "semantic-release",
     "start": "ng serve",
-    "test": "ng test --code-coverage && cat coverage/lcov.info"
+    "test": "ng test --singleRun --code-coverage && cat coverage/index.html"
   },
   "repository": {
     "type": "git",
